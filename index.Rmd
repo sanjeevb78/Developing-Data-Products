@@ -1,0 +1,85 @@
+---
+title: "Body Mass Index (BMI) Calculator"
+
+output: word_document
+hitheme: tomorrow
+job: Coursera - Developing Data Products (Please use up/down or left/right arrows for navigation)
+knit: slidify::knit2slides
+mode: selfcontained
+
+subtitle: RStudio Shiny application
+framework: io2012
+
+widgets: []
+---
+
+## Introduction
+
+This is an RStudio shiny application developed as a course project for Coursera's **Developing Data Products** course in the *Data Science Specialization* track.
+The developed application is a **Body Mass Index (BMI) Calculator**.  
+
+### Course project requirements
+The course project requirements for this application are:
+* Some form of input (widget: textbox, radio button, checkbox, ...)
+* Some operation on the ui input in sever.R
+* Some reactive output displayed as a result of server calculations
+* You must also include enough documentation so that a novice user could use your application.
+* The documentation should be at the Shiny website itself. Do not post to an external link.
+
+--- .class #id 
+
+## BMI Definition
+
+> The body mass index (BMI), or Quetelet index, is a measure of relative 
+> weight based on the mass and height of an individual.
+
+BMI is a way to calculate whether an individual's weight is considered to be
+in the normal range for their height.
+
+## How does the BMI calculator help?
+
+To assist with the calculation, we've created a Shiny app that takes 2 inputs:
+
+- Height (in feet and inches)
+- Weight (in lbs)
+
+Given the height and weight, the app will calculate the BMI for that individual.
+
+---
+
+## Application - Operations and Output
+
+Based on user inputs, and using the BMI calculation equation, the application displays:  
+1. Inputs entered by the user  
+2. Calculated BMI output value
+3. Body Mass Index chart
+
+The BMI calculation equation is:  
+** bmi = mass / height^2 ** conversion_const
+
+As an example, with an input height of 5 feet 7 inches and a weight of 155 lbs, the
+app would perform the following calculation in R:
+
+```{r, echo=TRUE}
+inches <- (5 * 12) + 7
+weight <- 155
+conversion_const = 703
+bmi <- (weight / (inches^2)) * conversion_const
+bmi
+```
+
+---
+
+## Application - Link and Code
+
+
+Link to application on the RStudio shinyapps.io website:  
+https://sanjeevb78.shinyapps.io/Coursera-Developing-Data-Products/
+
+Link to Presentation:      
+https://github.com/sanjeevb78/Developing-Data-Products/index.html
+
+
+Useful files in repo:  
+* ```server.R```
+* ```ui.R```
